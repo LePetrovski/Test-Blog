@@ -64,3 +64,16 @@ function newComment($postId, $author, $comment)
 
   return $newCommentLines;
 }
+
+function modifyPost($title, $content, $postId)
+{
+  $db = dbConnect();
+  $req = $db->prepare('UPDATE posts SET title = :title, content= :content WHERE id = :id');
+  $modifyPostLine = $req->execute(array(
+    'title' => $title,
+    'content' => $content,
+    'id' => $postId
+  ));
+
+  return $modifyPostLine;
+}
