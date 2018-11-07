@@ -46,3 +46,21 @@ function getComments($postId)
 
   return $comments;
 }
+
+function newPost($title, $content)
+{
+  $db = dbConnect();
+  $req = $db->prepare('INSERT INTO posts (title, content, date_creation) VALUES(?, ?, NOW())');
+  $newPostLines = $req->execute(array($title, $content));
+
+  return $newPostLines;
+}
+
+function newComment($postId, $author, $comment)
+{
+  $db = dbConnect();
+  $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+  $newCommentLines = $comments->execute(array($postId, $author, $comment));
+
+  return $newCommentLines;
+}
