@@ -77,3 +77,12 @@ function modifyPost($title, $content, $postId)
 
   return $modifyPostLine;
 }
+
+function reportComment($commentId)
+{
+  $db = dbConnect();
+  $comment = $db->prepare('UPDATE comments SET report_comment = report_comment+1 WHERE id = ?');
+  $report =$comment->execute(array($commentId));
+
+  return $report;
+}
