@@ -1,5 +1,8 @@
 <?php
-class PostManager
+
+require_once('model/Manager.php');
+
+class PostManager extends Manager
 {
   public function getPosts()
   {
@@ -50,11 +53,5 @@ AS date_creation_fr FROM posts ORDER BY date_creation DESC LIMIT 0, 5');
     $deletePostLine = $post->execute(array($postId));
 
     return $deletePostLine;
-  }
-
-  private function dbConnect()
-  {
-    $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
-    return $db;
   }
 }

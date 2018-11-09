@@ -1,5 +1,7 @@
 <?php
-class CommentManager
+require_once('model/Manager.php');
+
+class CommentManager extends Manager
 {
   public function getComments($postId)
   {
@@ -35,11 +37,5 @@ class CommentManager
     $deleteCommentLine = $comment->execute(array($commentId));
 
     return $deleteCommentLine;
-  }
-
-  private function dbConnect()
-  {
-    $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
-    return $db;
   }
 }
