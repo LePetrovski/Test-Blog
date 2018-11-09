@@ -10,7 +10,6 @@ require('model.php');
 
 $req = getPosts();
 
-require('template.php');
 require('indexView.php');
 
 
