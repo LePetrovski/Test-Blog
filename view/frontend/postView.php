@@ -23,7 +23,7 @@
     <label for="author">Pseudo</label> : <input type="text" name="author" id="author" /><br />
     <label for="comment">Message</label> :  <textarea type="text" name="comment" id="comment" ></textarea><br />
 
-    <input type="submit" value="Envoyer" />
+    <input type="submit" value="Envoyer" /><br />
   </div>
 
 <?php
@@ -36,6 +36,8 @@ while ($comment = $comments->fetch())
 }
 $comments->closeCursor();
 ?>
+
+  <button><a href="index.php">Retour</a></button>
 
 <?php $content = ob_get_clean(); ?>
 
