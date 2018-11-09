@@ -21,7 +21,17 @@ try{
       } else {
         throw new Exception('Aucun identifiant de billet envoyé');
       }
-    }
+    } elseif ($_GET['action'] == 'report') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+          if (isset($_GET['comment']) && $_GET['comment'] > 0) {
+          report($_GET['comment']);
+          } else {
+            throw new Exception('Le commentaire est introuvable');
+            }
+        } else {
+          throw new Exception('Aucun identifiant de billet envoyé');
+        }
+      }
   } else {
     listPosts();
   }
