@@ -26,6 +26,7 @@ while ($comment = $comments->fetch())
   <p><?= nl2br(strip_tags($comment['comment'])) ?></p>
   <?php
 }
+$comments->closeCursor();
 ?>
 
 <?php $content = ob_get_clean(); ?>
