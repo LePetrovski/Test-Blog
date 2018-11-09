@@ -23,7 +23,7 @@ while ($data = $req->fetch())
   </div>
   <?php
 }
-$posts->closeCursor();
+$req->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 
