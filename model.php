@@ -86,3 +86,22 @@ function reportComment($commentId)
 
   return $report;
 }
+
+
+function deletePost($postId)
+{
+  $db = dbConnect();
+  $post = $db->prepare('DELETE FROM posts WHERE id = ?');
+  $deletePostLine = $post->execute(array($postId));
+
+  return $deletePostLine;
+}
+
+function deleteComment($commentId)
+{
+  $db = dbConnect();
+  $comment = $db->prepare('DELETE FROM comments WHERE id = ?');
+  $deleteCommentLine = $comment->execute(array($commentId));
+
+  return $deleteCommentLine;
+}
