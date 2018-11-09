@@ -1,12 +1,12 @@
 <?php
 
-require('../model/frontend.php');
+require('model/frontend.php');
 
 function listPosts()
 {
   $posts = getPosts();
 
-  require('../view/frontend/listPostsView.php');
+  require('view/frontend/listPostsView.php');
 }
 
 function post()
@@ -14,7 +14,7 @@ function post()
   $post = getPost($_GET['id']);
   $comments = getComments($_GET['id']);
 
-  require('../view/frontend/postView.php');
+  require('view/frontend/postView.php');
 }
 
 function addComment($postId, $author, $comment)
