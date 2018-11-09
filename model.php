@@ -22,10 +22,10 @@ function dbConnect()
 function getPosts()
 {
   $db = dbConnect();
-  $req = $db->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\')
+  $posts = $db->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\')
 AS date_creation_fr FROM posts ORDER BY date_creation DESC LIMIT 0, 5');
 
-  return $req;
+  return $posts;
 }
 
 function getPost($postId)

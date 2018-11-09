@@ -6,7 +6,7 @@
 
 
 <?php
-while ($data = $req->fetch())
+while ($data = $posts->fetch())
 {
   ?>
   <div class="posts">
@@ -23,7 +23,7 @@ while ($data = $req->fetch())
   </div>
   <?php
 }
-$req->closeCursor();
+$posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 
