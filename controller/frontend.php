@@ -17,12 +17,12 @@ function post()
   require('view/frontend/postView.php');
 }
 
-function addComment($postId, $author, $comment)
+function addComment($postId, $author, $comment, $report)
 {
-  $newCommentLines = newComment($postId, $author, $comment);
+  $newCommentLines = newComment($postId, $author, $comment, $report);
 
   if($newCommentLines === false) {
-    die('Impossible d\'ajouter le commentaire !');
+    throw new Exception('Impossible d\'ajouter le commentaire !');
   }
   else {
     header('Location: index.php?action=post&id=' . $postId);

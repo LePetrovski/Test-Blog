@@ -8,15 +8,8 @@
 
 function dbConnect()
 {
-  try
-  {
     $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
     return $db;
-  }
-  catch(Exception $e)
-  {
-    die('Erreur : '.$e->getMessage());
-  }
 }
 
 function getPosts()
@@ -57,11 +50,11 @@ function newPost($title, $content)
   return $newPostLines;
 }
 
-function newComment($postId, $author, $comment)
+function newComment($postId, $author, $comment, $report)
 {
   $db = dbConnect();
-  $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-  $newCommentLines = $comments->execute(array($postId, $author, $comment));
+  $comments = $db->prepare('INSERT INTO comments(id_post, author, comment, report_comment, date_comment) VALUES(?, ?, ?, ?, NOW())');
+  $newCommentLines = $comments->execute(array($postId, $author, $comment, $report));
 
   return $newCommentLines;
 }
