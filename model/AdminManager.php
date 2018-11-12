@@ -8,7 +8,7 @@ class AdminManager extends Manager
     $db = $this->dbConnect();
     $req = $db->prepare('SELECT id, pass FROM admin WHERE pseudo = :pseudo');
     $req->execute(array(
-          'pseudo' => $pseudo));
+      'pseudo' => $pseudo));
     $login = $req->fetch();
 
     return $login;

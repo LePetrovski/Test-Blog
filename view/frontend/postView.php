@@ -21,7 +21,7 @@
 <form action="index.php?action=addComment&id=<?= $post['id']; ?>" method="post">
   <div>
     <label for="author">Pseudo</label> : <input type="text" name="author" id="author" /><br />
-    <label for="comment">Message</label> :  <textarea type="text" name="comment" id="comment" ></textarea>
+    <label for="comment">Message</label> :  <textarea type="text" name="comment" class="message" ></textarea>
 
     <input type="submit" value="Envoyer" /><br />
   </div>

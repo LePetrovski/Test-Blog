@@ -1,10 +1,6 @@
 <?php $title = 'Accueil'; ?>
 
 <?php ob_start(); ?>
-  <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-  <p>Une oeuvre originale de Jean Forteroche:</p>
-
-
 <?php
 while ($data = $posts->fetch())
 {

@@ -12,6 +12,8 @@
     </p>
   </form>
 
+  <button><a href="index.php">Retour</a></button>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
