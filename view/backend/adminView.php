@@ -1,6 +1,8 @@
 <?php $title = 'Post'; ?>
 
 <?php ob_start(); ?>
+
+<div class="posts">
   <button><a href="admin.php?action=writePost">Créer un billet</a></button><br />
 
 
@@ -8,7 +10,7 @@
 while ($post = $posts->fetch())
 {
   ?>
-  <div class="posts">
+  <div class="post">
     <h3>
       <?= strip_tags($post['title']) ?>
       <em>le <?= $post['date_creation_fr'] ?></em>
@@ -37,7 +39,7 @@ $posts->closeCursor();
       $comments->closeCursor();
     ?>
 
-
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

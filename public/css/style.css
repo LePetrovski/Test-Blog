@@ -1,3 +1,20 @@
-html{
-  background-color: #3797ba;
+body{
+  background: url("../images/mist.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#logo{
+  height: 300px;
+  width: 320px;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  margin-left: -160px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+.posts {
+  margin-top: 400px !important;
+  border-radius: 10px;
+  background: rgba(247, 247, 247, 0.8);
 }

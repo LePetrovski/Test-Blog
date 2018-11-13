@@ -10,11 +10,13 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+          <a class="brand" href="#">
+            <img src="public/images/logo2.png" id="logo" alt="">
+          </a>
+    </div>
+
     <div class="container">
-      <div class="row">
-        <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-        <p>Une oeuvre originale de Jean Forteroche:</p>
-      </div>
 
       <?= $content ?>
 

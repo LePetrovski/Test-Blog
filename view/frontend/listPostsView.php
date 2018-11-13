@@ -1,11 +1,12 @@
 <?php $title = 'Accueil'; ?>
 
 <?php ob_start(); ?>
+<div class="posts">
 <?php
 while ($data = $posts->fetch())
 {
   ?>
-  <div class="posts">
+  <div class="post">
     <h3>
       <?= strip_tags($data['title']) ?>
       <em>le <?= $data['date_creation_fr'] ?></em>
@@ -21,6 +22,7 @@ while ($data = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

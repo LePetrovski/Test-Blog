@@ -13,21 +13,20 @@ session_start();
   </head>
 
   <body>
-  <div class="container">
-    <div class="row">
-      <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-      <h2>ESPACE ADMINISTRATION</h2>
+    <div class="container-fluid">
+      <a class="brand" href="#">
+        <img src="public/images/logo2.png" id="logo" alt="">
+      </a>
     </div>
-    <div class="row">
-      <p>bienvenu Monsieur Forteroche</p>
-    </div>
+
+    <div class="container">
+
     <?= $content ?>
-
   </body>
-
 
   <footer>
   </footer>
+
   <div/>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
