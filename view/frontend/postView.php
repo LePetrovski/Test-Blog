@@ -1,10 +1,6 @@
 <?php $title = 'Post'; ?>
 
 <?php ob_start(); ?>
-  <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-  <p>Une oeuvre originale de Jean Forteroche:</p>
-
-
   <div class="posts">
     <h3>
       <?= strip_tags($post['title']) ?>

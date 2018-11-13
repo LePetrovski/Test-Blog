@@ -1,10 +1,6 @@
 <?php $title = 'Post'; ?>
 
 <?php ob_start(); ?>
-  <h1>BILLET SIMPLE POUR L'ALASKA</h1>
-  <h2>ESPACE ADMINISTRATION</h2>
-  <p>bienvenu Monsieur Forteroche</p>
-
   <button><a href="admin.php?action=writePost">Créer un billet</a></button><br />
 
 
