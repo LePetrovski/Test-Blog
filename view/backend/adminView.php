@@ -23,9 +23,10 @@ while ($post = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
+</div>
 
   <h2>Commentaires signalés</h2>
-
+  <div class="comments">
   <?php
     while ($comment = $comments->fetch())
     {
@@ -38,8 +39,10 @@ $posts->closeCursor();
     }
       $comments->closeCursor();
     ?>
-
 </div>
+
+  <button><a href="admin.php?action=destroy">Déconnexion</a></button>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

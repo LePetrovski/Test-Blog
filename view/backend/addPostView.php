@@ -13,7 +13,7 @@
     </p>
   </form>
 
-  <button><a href="admin.php">Retour</a></button>
+  <button><a href="admin.php?action=adminTab">Retour</a></button>
 
 
 

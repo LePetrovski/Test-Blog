@@ -12,7 +12,7 @@
   <body>
     <div class="container-fluid">
           <a class="brand" href="#">
-            <img src="public/images/logo2.png" id="logo" alt="">
+            <img src="public/images/logo5.png" id="logo" alt="">
           </a>
     </div>
 

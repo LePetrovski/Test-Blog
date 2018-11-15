@@ -3,8 +3,18 @@ require('controller/backend.php');
 
 try{
   if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'administrationTab') {
-     adminTab();
+    if ($_GET['action'] == 'identification') {
+      identification();
+    }elseif ($_GET['action'] == 'login') {
+      if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
+        login($_POST['pseudo'], $_POST['password']);
+      } else {
+        throw new Exception('Tous les champs ne sont pas remplis !');
+      }
+    }elseif ($_GET['action'] == 'adminTab') {
+      adminTab();
+    }elseif ($_GET['action'] == 'destroy') {
+      destroy();
     }elseif ($_GET['action'] == 'modify') {
       if(isset($_GET['id']) && $_GET['id'] > 0) {
         modify($_GET['id']);

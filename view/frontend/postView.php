@@ -22,6 +22,7 @@
     <input type="submit" value="Envoyer" /><br />
   </div>
 
+<div class="comments">
 <?php
 while ($comment = $comments->fetch())
 {
@@ -35,6 +36,7 @@ while ($comment = $comments->fetch())
 }
 $comments->closeCursor();
 ?>
+</div>
 
   <button><a href="index.php">Retour</a></button>
 

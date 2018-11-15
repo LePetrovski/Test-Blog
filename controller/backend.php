@@ -9,11 +9,35 @@ function identification()
   require('view/backend/loginView.php');
 }
 
-function login()
+function login($pseudo, $password)
 {
   $adminManager = new AdminManager();
 
-  $admin = $adminManager->logIn($_GET['pseudo']);
+  $admin = $adminManager->logIn($pseudo);
+
+  $isPasswordCorrect = password_verify($password, $admin['password']);
+
+    if (!$admin) {
+      echo 'Mauvais identifiant ou mot de passe !';
+    }else {
+      if ($isPasswordCorrect) {
+        $_SESSION['pseudo'] = $pseudo;
+        adminTab();
+      }else {
+        echo 'Mauvais identifiant ou mot de passe !';
+      }
+    }
+}
+
+function destroy()
+{
+  session_start();
+
+  $_SESSION = array();
+  session_destroy();
+  unset($_SESSION);
+
+  header('Location: index.php');
 }
 
 function adminTab()
@@ -24,7 +48,7 @@ function adminTab()
   $posts = $postManager->getPosts();
   $comments = $commentManager->getReportedComments();
 
-  require('view/backend/adminView.php');
+    require('view/backend/adminView.php');
 }
 
 function modify($postId)

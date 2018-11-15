@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+  if (!isset($_SESSION['status']))
+  {
+    $_SESSION['status'] = true;
+    header('Location: admin.php?action=identification');
+    exit();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +22,9 @@ session_start();
   <body>
     <div class="container-fluid">
       <a class="brand" href="#">
-        <img src="public/images/logo2.png" id="logo" alt="">
+        <img src="public/images/logo5.png" id="logo" alt="">
       </a>
+      <p><?php if(isset($_SESSION['pseudo'])){ echo 'Bienvenue Mr ' . $_SESSION['pseudo'];} ?></p>
     </div>
 
     <div class="container">

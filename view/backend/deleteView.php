@@ -17,7 +17,7 @@
     </p>
   </div>
   <button><a href="admin.php?action=delete&id=<?php echo $post['id']; ?>">Supprimer</a></button>
-  <button><a href="admin.php">Retour</a></button>
+  <button><a href="admin.php?action=adminTab">Retour</a></button>
 
 
 

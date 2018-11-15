@@ -4,17 +4,25 @@ body{
 }
 
 #logo{
-  height: 300px;
-  width: 320px;
+  height: 400px;
+  width: 420px;
   position: fixed;
   top: 40px;
   left: 50%;
-  margin-left: -160px !important;  /* 50% of your logo width */
+  margin-left: -210px !important;
   display: block;
+  z-index: 1;
 }
 
 .posts {
-  margin-top: 400px !important;
+  position: relative;
+  margin-top: 500px !important;
   border-radius: 10px;
   background: rgba(247, 247, 247, 0.8);
+  z-index: 2;
+}
+
+.comments {
+  border-radius: 10px;
+  background: rgba(247, 247, 247, 1);
 }

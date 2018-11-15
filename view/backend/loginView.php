@@ -12,7 +12,7 @@
     </p>
   </form>
 
-  <button><a href="index.php">Retour</a></button>
+  <button><a href="admin.php?action=destroy">Retour</a></button>
 
 <?php $content = ob_get_clean(); ?>
 
