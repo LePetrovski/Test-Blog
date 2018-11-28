@@ -1,3 +1,3 @@
 tinymce.init({
-    selector: '.message'
+    selector: '#content'
 });
